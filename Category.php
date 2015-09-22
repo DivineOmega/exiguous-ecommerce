@@ -24,7 +24,7 @@ class Category
             
             $obj = self::find($id);
             
-            if ($obj->data->slug==$slug) {
+            if (isset($obj->data->slug) && $obj->data->slug==$slug) {
                 return $obj;
             }
         }
