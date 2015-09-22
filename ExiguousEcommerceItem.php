@@ -22,7 +22,7 @@ class ExiguousEcommerceItem
             throw new \Exception("File data is marked as deleted: ".$file);
         }
         
-        return new $class($data);
+        return new $class($id, $data);
     }
     
     public static function findBySlug($directory, $class, $slug)

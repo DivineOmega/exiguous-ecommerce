@@ -12,10 +12,12 @@ class Order
         return ExiguousEcommerceItem::find(self::$directory, self::$class, $id);
     }
     
+    public $id = null;
     public $data = null;
     
-    public function __construct($data)
+    public function __construct($id, $data)
     {
+        $this->id = $id;
         $this->data = $data;
     }
 }

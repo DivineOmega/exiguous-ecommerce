@@ -4,9 +4,9 @@ Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and
 
 **Still in development!**
 
-## Quick Start
+## Quick Start Examples
 
-Examples of getting products and categories:
+Getting products and categories:
 
 ```php
 $category = \DivineOmega\ExiguousEcommerce\Product::findBySlug("fluffy-things");
@@ -22,4 +22,18 @@ $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 $categories = $product->categories();
 
 $mainCategoryName = $categories[0]->data->name;
+```
+
+Getting the current user's basket and adding a product to it:
+
+```php
+$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+
+$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+
+$basket->addProduct($product); // Add one Teddy Bear
+
+$basket->addProduct($product, 2); // Add another two Teddy Bears!
+
+var_dump($basket->items); // Outputs an array of, you guessed it, basket items! ^_^
 ```

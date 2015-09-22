@@ -17,10 +17,12 @@ class Category
         return ExiguousEcommerceItem::findBySlug(self::$directory, self::$class, $slug);
     }
     
+    public $id = null;
     public $data = null;
     
-    public function __construct($data)
+    public function __construct($id, $data)
     {
+        $this->id = $id;
         $this->data = $data;
     }
     
