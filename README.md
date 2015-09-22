@@ -36,4 +36,7 @@ $basket->addProduct($product); // Add one Teddy Bear
 $basket->addProduct($product, 2); // Add another two Teddy Bears!
 
 var_dump($basket->items); // Outputs an array of, you guessed it, basket items! ^_^
+
+// ^ This would show 1 basket item with a quantity of 3 teddy bears.
+
 ```
