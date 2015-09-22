@@ -32,6 +32,14 @@ class Basket
     
     public function addProduct($product, $quantity = 1)
     {
+        if (!$product || !is_object($product) || !isset($product->id)) {
+            throw new \Exception("Unable to add an invalid product to the basket.");
+        }
+        
+        if ($quantity<=0) {
+            throw new \Exception("Unable to add <= 0 quantity of a product to the basket.");
+        }
+        
         foreach ($this->items as $item) {
             
             if ($item->product->id==$product->id) {
