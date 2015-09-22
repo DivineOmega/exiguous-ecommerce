@@ -2,11 +2,11 @@
 
 Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and takes a very minimalistic approach.
 
-** Still in development! **
+**Still in development!**
 
 ## Quick Start
 
-Examples of getting products and categories
+Examples of getting products and categories:
 
 ```php
 $category = \DivineOmega\ExiguousEcommerce\Product::findBySlug("fluffy-things");
