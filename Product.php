@@ -33,7 +33,11 @@ class Product
         $objs = [];
         
         foreach($ids as $id) {
-            $objs[] = Category::find($id);
+            $obj = Category::find($id); 
+            
+            if ($obj) {
+                $objs[] = $obj;
+            }
         }
         
         return $objs;

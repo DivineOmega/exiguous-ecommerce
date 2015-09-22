@@ -19,7 +19,7 @@ class ExiguousEcommerceItem
         }
         
         if (isset($data->deleted_at) && $data->deleted_at>0) {
-            throw new \Exception("File data is marked as deleted: ".$file);
+            return null;
         }
         
         return new $class($id, $data);
