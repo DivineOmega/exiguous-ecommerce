@@ -22,6 +22,10 @@ class ExiguousEcommerceItem
             return null;
         }
         
+        if (isset($data->draft) && $data->draft==true) {
+            return null;
+        }
+        
         return new $class($id, $data);
     }
     
