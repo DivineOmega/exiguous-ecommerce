@@ -2,6 +2,8 @@
 
 Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and takes a very minimalistic approach.
 
+** Still in development! **
+
 ## Quick Start
 
 Get things:
