@@ -24,7 +24,7 @@
         "country": "United Kingdom",
         "country_code": "GB"
     },
-    "lines": {
+    "items": {
         "product_id": 1,
         "product_snapshot": {
             "slug": "teddy-bear",
