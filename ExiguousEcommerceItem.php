@@ -25,11 +25,24 @@ class ExiguousEcommerceItem
         return new $class($data);
     }
     
-    public $data = null;
-    
-    public function __construct($data)
+    public static function findBySlug($directory, $class, $slug)
     {
-        $this->data = $data;
+        for ($id = 1; $id < PHP_INT_MAX; $id++) {
+            
+            $file = __DIR__."/".$directory."/".$id.".json";
+        
+            if (!file_exists($file)) {
+                break;
+            }
+            
+            $obj = self::find($directory, $class, $id);
+            
+            if (isset($obj->data->slug) && $obj->data->slug==$slug) {
+                return $obj;
+            }
+        }
+        
+        throw new \Exception("No item found with specified slug.");
     }
 }
 
