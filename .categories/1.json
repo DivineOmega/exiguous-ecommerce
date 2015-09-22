@@ -1,0 +1,8 @@
+{
+    "slug": "fluffy-things",
+    "name": "Fluffy Things",
+    "description" : "Lovely fluffy things, such as teddy bears and plush toys.",
+    "image_urls": [],
+    "product_ids": [ 1 ],
+    "active": true
+}

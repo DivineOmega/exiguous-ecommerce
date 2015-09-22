@@ -1,0 +1,48 @@
+{
+    "date_placed": 1442938339,
+    "customer": {
+        "first_name": "Jordan",
+        "last_name": "Hall"
+    },
+    "billing_address": {
+        "first_name": "Jordan",
+        "last_name": "Hall",
+        "line_1": "15 Generation Road",
+        "line_2": "Quadra End",
+        "town_city": "Birmingham",
+        "postal_code": "SP12 3FE",
+        "country": "United Kingdom",
+        "country_code": "GB"
+    },
+    "delivery_address": {
+        "first_name": "Jordan",
+        "last_name": "Hall",
+        "line_1": "15 Generation Road",
+        "line_2": "Quadra End",
+        "town_city": "Birmingham",
+        "postal_code": "SP12 3FE",
+        "country": "United Kingdom",
+        "country_code": "GB"
+    },
+    "lines": {
+        "product_id": 1,
+        "product_snapshot": {
+            "slug": "teddy-bear",
+            "name": "Teddy Bear",
+            "description" : "A cute bear to snuggle and love! <3",
+            "image_urls": [],
+            "prices": [ { "value": 12.99, "currency": "GBP" },
+                        { "value": 17.50, "currency": "USD" } ],
+            "category_ids": [ 1 ],
+            "active": true
+        },
+        "unit_cost": 12.99,
+        "currency": "GBP",
+        "quantity": 2,
+        "total": 25.98
+    },
+    "subtotal": 25.98,
+    "delivery_name": "Standard",
+    "delivery_cost": 1.00,
+    "total": 26.98
+}
