@@ -6,5 +6,6 @@
     "prices": [ { "value": 12.99, "currency": "GBP" },
                 { "value": 17.50, "currency": "USD" } ],
     "category_ids": [ 1 ],
-    "active": true
+    "draft": false,
+    "deleted_at": 0
 }

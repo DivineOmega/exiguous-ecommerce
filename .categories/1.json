@@ -4,5 +4,6 @@
     "description" : "Lovely fluffy things, such as teddy bears and plush toys.",
     "image_urls": [],
     "product_ids": [ 1 ],
-    "active": true
+    "draft": false,
+    "deleted_at": 0
 }
