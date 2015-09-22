@@ -1,2 +1,5 @@
 # Vendor directory
 vendor
+
+# Composer
+composer.lock
