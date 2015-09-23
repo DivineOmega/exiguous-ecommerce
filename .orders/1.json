@@ -43,7 +43,7 @@
         "total": 25.98
     },
     "subtotal": 25.98,
-    "delivery_name": "Standard",
+    "delivery_type": "Standard",
     "delivery_cost": 1.00,
     "total": 26.98
 }

@@ -88,6 +88,62 @@ class Basket
             }
         }
     }
+    
+    public function setCustomerName($firstName, $lastName)
+    {
+        $this->customer = new \stdClass;
+        
+        $this->customer->firstName = $firstName;
+        $this->customer->lastName = $lastName;
+        
+        $this->save();
+    }
+    
+    public function setBillingAddress($firstName, $lastName, $line1, $line2, $townCity, $postalCode, $country, $countryCode)
+    {
+        $this->billingAddress = new \stdClass;
+        
+        $this->billingAddress->firstName = $firstName;
+        $this->billingAddress->lastName = $lastName;
+        $this->billingAddress->line1 = $line1;
+        $this->billingAddress->line2 = $line2;
+        $this->billingAddress->townCity = $townCity;
+        $this->billingAddress->postalCode = $postalCode;
+        $this->billingAddress->country = $country;
+        $this->billingAddress->countryCode = $countryCode;
+        
+        $this->save();
+    }
+    
+    public function setDeliveryAddress($firstName, $lastName, $line1, $line2, $townCity, $postalCode, $country, $countryCode)
+    {
+        $this->deliveryAddress = new \stdClass;
+        
+        $this->deliveryAddress->firstName = $firstName;
+        $this->deliveryAddress->lastName = $lastName;
+        $this->deliveryAddress->line1 = $line1;
+        $this->deliveryAddress->line2 = $line2;
+        $this->deliveryAddress->townCity = $townCity;
+        $this->deliveryAddress->postalCode = $postalCode;
+        $this->deliveryAddress->country = $country;
+        $this->deliveryAddress->countryCode = $countryCode;
+        
+        $this->save();
+    }
+    
+    public function setDeliveryType($deliveryName)
+    {
+        $this->deliveryType = $deliveryType;
+        
+        $this->save();
+    }
+    
+    public function setDeliveryCost($deliveryCost)
+    {
+        $this->deliveryCost = $deliveryCost;
+        
+        $this->save();
+    }
 
     private function save()
     {
