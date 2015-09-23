@@ -61,4 +61,6 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 $basket->addProduct($product); // Add one Teddy Bear
 
 $basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
+
+$basket->offsetProductQuantity($product, -5); // Remove five of those Teddy Bears
 ```
