@@ -131,16 +131,12 @@ class Basket
         $this->save();
     }
     
-    public function setDeliveryType($deliveryName)
+    public function setDeliveryOption($name, $cost)
     {
-        $this->deliveryType = $deliveryType;
+        $this->deliveryOption = new \stdClass;
         
-        $this->save();
-    }
-    
-    public function setDeliveryCost($deliveryCost)
-    {
-        $this->deliveryCost = $deliveryCost;
+        $this->deliveryOption->name = $name;
+        $this->deliveryOption->cost = $cost;
         
         $this->save();
     }
