@@ -50,3 +50,15 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->removeProduct($product); // Removes all teddy bears from the basket
 ```
+
+Offsetting the quantity of a product in the basket:
+
+```php
+$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+
+$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+
+$basket->addProduct($product); // Add one Teddy Bear
+
+$basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
+```

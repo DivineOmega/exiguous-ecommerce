@@ -72,6 +72,27 @@ class Basket
         }
     }
     
+    public function offsetProductQuantity($product, $quantityOffset)
+    {
+        if (!$product || !is_object($product) || !isset($product->id)) {
+            throw new \Exception("Unable to add an invalid product to the basket.");
+        }
+        
+        foreach ($this->items as $item) {
+            
+            if ($item->product->id==$product->id) {
+                
+                if ($item->quantity + $quantityOffset < 0) {
+                    throw new \Exception("Unable to offset quantity of a product to the basket to below zero.");
+                }
+                
+                $item->quantity += $quantityOffset;
+                $this->save();
+                return;
+            }
+        }
+    }
+    
     private function save()
     {
         $sessionStarted = @session_start();

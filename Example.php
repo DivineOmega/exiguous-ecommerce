@@ -10,7 +10,7 @@ $basket->addProduct($product, 1);
 
 var_dump($basket->items);
 
-$basket->removeProduct($product, 1);
+$basket->offsetProductQuantity($product, 10);
 
 var_dump($basket->items);
 
