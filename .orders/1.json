@@ -1,49 +1,51 @@
 {
-    "date_placed": 1442938339,
+    "datePlaced": 1442938339,
     "customer": {
-        "first_name": "Jordan",
-        "last_name": "Hall"
+        "firstName": "Jordan",
+        "lastName": "Hall"
     },
-    "billing_address": {
-        "first_name": "Jordan",
-        "last_name": "Hall",
-        "line_1": "15 Generation Road",
-        "line_2": "Quadra End",
-        "town_city": "Birmingham",
-        "postal_code": "SP12 3FE",
+    "billingAddress": {
+        "firstName": "Jordan",
+        "lastName": "Hall",
+        "line1": "15 Generation Road",
+        "line2": "Quadra End",
+        "townCity": "Birmingham",
+        "postalCode": "SP12 3FE",
         "country": "United Kingdom",
-        "country_code": "GB"
+        "countryCode": "GB"
     },
-    "delivery_address": {
-        "first_name": "Jordan",
-        "last_name": "Hall",
-        "line_1": "15 Generation Road",
-        "line_2": "Quadra End",
-        "town_city": "Birmingham",
-        "postal_code": "SP12 3FE",
+    "deliveryAddress": {
+        "firstName": "Jordan",
+        "lastName": "Hall",
+        "line1": "15 Generation Road",
+        "line2": "Quadra End",
+        "townCity": "Birmingham",
+        "postalCode": "SP12 3FE",
         "country": "United Kingdom",
-        "country_code": "GB"
+        "countryCode": "GB"
     },
-    "items": {
-        "product_id": 1,
-        "product_snapshot": {
-            "slug": "teddy-bear",
-            "name": "Teddy Bear",
-            "description" : "A cute bear to snuggle and love! <3",
-            "image_urls": [],
-            "prices": [ { "value": 12.99, "currency": "GBP" },
-                        { "value": 17.50, "currency": "USD" } ],
-            "category_ids": [ 1 ],
-            "draft": false,
-            "deleted_at": 0
-        },
-        "unit_cost": 12.99,
-        "currency": "GBP",
-        "quantity": 2,
-        "total": 25.98
-    },
+    "items": [ 
+        {
+            "productId": 1,
+            "productSnapshot": {
+                "slug": "teddy-bear",
+                "name": "Teddy Bear",
+                "description" : "A cute bear to snuggle and love! <3",
+                "imageUrls": [],
+                "prices": [ { "value": 12.99, "currency": "GBP" },
+                            { "value": 17.50, "currency": "USD" } ],
+                "categoryIds": [ 1 ],
+                "draft": false,
+                "deletedAt": 0
+            },
+            "unitCost": 12.99,
+            "currency": "GBP",
+            "quantity": 2,
+            "total": 25.98
+        }
+    ],
     "subtotal": 25.98,
-    "delivery_option": {
+    "deliveryOption": {
         "name": "Standard",
         "cost": 1.00
     },
