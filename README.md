@@ -4,6 +4,22 @@ Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and
 
 **Still in development!**
 
+## Installation
+
+First, change your `composer.json` file to include the `divineomega/exiguous-ecommerce` package as shown below.
+
+```
+{
+    "require": {
+        "divineomega/exiguous-ecommerce": "dev-master"
+    }
+}
+```
+
+Then just run `composer update` to download/install Exiguous Ecommerce and create relevant autoload files.
+
+If your framework does not already do so, you must add `require_once "vendor/autoload.php"` to any files in which you wish to use Exiguous Ecommerce.
+
 ## Quick Start Examples
 
 Getting products and categories:
