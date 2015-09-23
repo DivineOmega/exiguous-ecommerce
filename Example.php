@@ -1,8 +1,8 @@
 <?php
 
-require "vendor/autoload.php";
+require 'vendor/autoload.php';
 
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug('teddy-bear');
 
 $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
@@ -13,5 +13,3 @@ var_dump($basket->items);
 $basket->offsetProductQuantity($product, 10);
 
 var_dump($basket->items);
-
-?>
