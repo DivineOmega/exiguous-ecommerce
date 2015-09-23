@@ -54,6 +54,24 @@ class Basket
         $this->save();
     }
     
+    public function removeProduct($product)
+    {
+        if (!$product || !is_object($product) || !isset($product->id)) {
+            throw new \Exception("Unable to add an invalid product to the basket.");
+        }
+        
+        foreach ($this->items as $key => $item) {
+            
+            if ($item->product->id==$product->id) {
+                
+                unset($this->items[$key]);
+                
+                $this->save();
+                return;
+            }
+        }
+    }
+    
     private function save()
     {
         $sessionStarted = @session_start();

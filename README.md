@@ -40,3 +40,13 @@ var_dump($basket->items); // Outputs an array of, you guessed it, basket items! 
 // ^ This would show 1 basket item with a quantity of 3 teddy bears.
 
 ```
+
+Removing a product from a basket: 
+
+```php
+$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+
+$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+
+$basket->removeProduct($product); // Removes all teddy bears from the basket
+```
