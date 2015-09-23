@@ -28,7 +28,7 @@ class Product
 
     public function categories()
     {
-        $ids = isset($this->data->category_ids) && is_array($this->data->category_ids) ? $this->data->category_ids : [];
+        $ids = isset($this->data->categoryIds) && is_array($this->data->categoryIds) ? $this->data->categoryIds : [];
 
         $objs = [];
 

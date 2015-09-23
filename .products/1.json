@@ -2,10 +2,10 @@
     "slug": "teddy-bear",
     "name": "Teddy Bear",
     "description" : "A cute bear to snuggle and love! <3",
-    "image_urls": [],
+    "imageUrls": [],
     "prices": [ { "value": 12.99, "currency": "GBP" },
                 { "value": 17.50, "currency": "USD" } ],
-    "category_ids": [ 1 ],
+    "categoryIds": [ 1 ],
     "draft": false,
-    "deleted_at": 0
+    "deletedAt": 0
 }
