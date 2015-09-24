@@ -27,7 +27,7 @@
     "items": [ 
         {
             "productId": 1,
-            "productSnapshot": {
+            "product": {
                 "slug": "teddy-bear",
                 "name": "Teddy Bear",
                 "description" : "A cute bear to snuggle and love! <3",
