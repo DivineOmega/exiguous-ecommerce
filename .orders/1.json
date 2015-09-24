@@ -39,7 +39,6 @@
                 "deletedAt": 0
             },
             "unitCost": 12.99,
-            "currency": "GBP",
             "quantity": 2,
             "total": 25.98
         }
@@ -49,5 +48,6 @@
         "name": "Standard",
         "cost": 1.00
     },
-    "total": 26.98
+    "total": 26.98,
+    "currency": "GBP"
 }
