@@ -1,5 +1,6 @@
 {
-    "datePlaced": 1443087352,
+    "datePlaced": 1443087698,
+    "currency": "GBP",
     "customer": null,
     "billingAddress": null,
     "deliveryAddress": null,
@@ -31,13 +32,12 @@
                     "deletedAt": 0
                 }
             },
-            "quantity": 2,
+            "quantity": 4,
             "unitCost": 12.99,
-            "total": 25.98
+            "total": 51.96
         }
     ],
-    "subtotal": 25.98,
+    "subtotal": 51.96,
     "deliveryOption": null,
-    "total": 25.98,
-    "currency": "GBP"
+    "total": 51.96
 }

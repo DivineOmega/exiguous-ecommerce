@@ -7,9 +7,70 @@ class Order
     public static $directory = '.orders';
     public static $class = 'Order';
 
-    public static function find()
+    public static function find($id)
     {
         return ExiguousEcommerceItem::find(self::$directory, self::$class, $id);
+    }
+    
+    public static function createFromBasket($basket)
+    {
+        $orderData = new \stdClass();
+        
+        $orderData->datePlaced = time();
+        
+        $orderData->currency = $basket->currency;
+        
+        if (!$orderData->currency) {
+            throw new \Exception('No currency has been specified for the current basket. Unable to convert basket to order.');
+        }
+        
+        $orderData->customer = $basket->customer;
+        $orderData->billingAddress = $basket->billingAddress;
+        $orderData->deliveryAddress = $basket->deliveryAddress;
+        $orderData->items = $basket->items;
+        
+        $orderData->subtotal = 0;
+        
+        foreach($orderData->items as $item) {
+            
+            $item->unitCost = null;
+            
+            if (isset($item->product)) {
+                
+                foreach($item->product->data->prices as $price) {
+                    
+                    if ($price->currency == $orderData->currency) {
+                        
+                        $item->unitCost = $price->value;
+                        break;
+                    }
+                }
+            }
+            
+            if ($item->unitCost===null) {
+                throw new \Exception('Unable to determine unit cost of product when creating order from basket. Check relevant products have prices in the currency defined for this order.');
+            }
+            
+            $item->total = $item->unitCost * $item->quantity;
+            
+            $orderData->subtotal += $item->total;
+        }
+        
+        $orderData->deliveryOption = $basket->deliveryOption;
+        
+        $orderData->total = $orderData->subtotal;
+        
+        if ($orderData->deliveryOption != null) {
+            $orderData->total += $orderData->deliveryOption->cost;
+        }
+        
+        $id = ExiguousEcommerceItem::getUsusedId(self::$directory);
+        
+        $order = new Order($id, $orderData);
+        
+        $order->save();
+        
+        return self::find($id);
     }
 
     public $id = null;
@@ -19,5 +80,10 @@ class Order
     {
         $this->id = $id;
         $this->data = $data;
+    }
+    
+    public function save()
+    {
+        ExiguousEcommerceItem::save(self::$directory, $this);
     }
 }

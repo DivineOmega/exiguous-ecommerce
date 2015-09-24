@@ -47,4 +47,26 @@ class ExiguousEcommerceItem
 
         throw new \Exception('No item found with specified slug.');
     }
+    
+    public static function getUsusedId($directory)
+    {
+        for ($id = 1; $id < PHP_INT_MAX; $id++) {
+            $file = __DIR__.'/'.$directory.'/'.$id.'.json';
+
+            if (!file_exists($file)) {
+                return $id;
+            }
+        }
+        
+        return false;
+    }
+    
+    public static function save($directory, $object)
+    {
+        $file = __DIR__.'/'.$directory.'/'.$object->id.'.json';
+        
+        $data = json_encode($object->data, JSON_PRETTY_PRINT);
+        
+        file_put_contents($file, $data);
+    }
 }

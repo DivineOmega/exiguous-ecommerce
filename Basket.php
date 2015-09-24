@@ -24,6 +24,11 @@ class Basket
     }
 
     public $items = [];
+    public $customer = null;
+    public $billingAddress = null;
+    public $deliveryAddress = null;
+    public $deliveryOption = null;
+    public $currency = null;
 
     public function __construct()
     {
@@ -140,6 +145,11 @@ class Basket
 
         $this->save();
     }
+    
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+    }
 
     private function save()
     {
@@ -150,5 +160,14 @@ class Basket
         }
 
         $_SESSION['ExiguousEcommerce']->Basket = $this;
+    }
+    
+    public function convertToOrder()
+    {
+        $order = Order::createFromBasket($this);
+        
+        $_SESSION['ExiguousEcommerce']->Basket = null;
+        
+        return $order;
     }
 }

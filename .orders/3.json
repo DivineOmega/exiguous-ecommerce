@@ -1,5 +1,6 @@
 {
-    "datePlaced": 1443087352,
+    "datePlaced": 1443087740,
+    "currency": "GBP",
     "customer": null,
     "billingAddress": null,
     "deliveryAddress": null,
@@ -38,6 +39,5 @@
     ],
     "subtotal": 25.98,
     "deliveryOption": null,
-    "total": 25.98,
-    "currency": "GBP"
+    "total": 25.98
 }
