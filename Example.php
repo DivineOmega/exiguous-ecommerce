@@ -6,7 +6,7 @@ $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug('teddy-bear');
 
 $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
-$basket->setCurrency("GBP");
+$basket->setCurrency('GBP');
 
 $basket->addProduct($product, 2);
 

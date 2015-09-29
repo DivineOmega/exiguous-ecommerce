@@ -145,7 +145,7 @@ class Basket
 
         $this->save();
     }
-    
+
     public function setCurrency($currency)
     {
         $this->currency = $currency;
@@ -161,13 +161,13 @@ class Basket
 
         $_SESSION['ExiguousEcommerce']->Basket = $this;
     }
-    
+
     public function convertToOrder()
     {
         $order = Order::createFromBasket($this);
-        
+
         $_SESSION['ExiguousEcommerce']->Basket = null;
-        
+
         return $order;
     }
 }
