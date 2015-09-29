@@ -82,3 +82,14 @@ $basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
 
 $basket->offsetProductQuantity($product, -5); // Remove five of those Teddy Bears
 ```
+
+Getting and using settings:
+
+```php
+
+// Retrieves settings from the core.json file within the .settings directory
+$coreSettings = \DivineOmega\ExiguousEcommerce\Settings::find('core');
+
+echo $coreSettings->data->primaryCurrency; // Output the ecommerce's primary currency setting
+
+```
