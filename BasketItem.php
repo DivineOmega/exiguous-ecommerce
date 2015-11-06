@@ -13,14 +13,27 @@ class BasketItem
         $this->quantity = $quantity;
     }
 
-    public function unitCost()
+    public function unitCost($currency)
     {
-        // TODO: Retrieve current unit cost based on priceRules
-        return 0.00;
+        $unitCost = null;
+        
+        if (isset($item->product)) {
+            
+            // TODO: Retrieve current unit cost based on $this->product->data->priceRules
+            
+            foreach ($this->product->data->prices as $price) {
+                if ($price->currency == $currency) {
+                    $unitCost = $price->value;
+                    break;
+                }
+            }
+        }
+        
+        return $unitCost;
     }
 
-    public function lineTotal()
+    public function lineTotal($currency)
     {
-        return $this->unitCost() * $this->quantity;
+        return $this->unitCost($currency) * $this->quantity;
     }
 }

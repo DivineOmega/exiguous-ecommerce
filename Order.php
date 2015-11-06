@@ -32,22 +32,14 @@ class Order
         $orderData->subtotal = 0;
 
         foreach ($orderData->items as $item) {
-            $item->unitCost = null;
-
-            if (isset($item->product)) {
-                foreach ($item->product->data->prices as $price) {
-                    if ($price->currency == $orderData->currency) {
-                        $item->unitCost = $price->value;
-                        break;
-                    }
-                }
-            }
+            
+            $item->unitCost = $item->unitCost($orderData->currency);
 
             if ($item->unitCost === null) {
                 throw new \Exception('Unable to determine unit cost of product when creating order from basket. Check relevant products have prices in the currency defined for this order.');
             }
 
-            $item->total = $item->unitCost * $item->quantity;
+            $item->lineTotal = lineTotal($orderData->currency);
 
             $orderData->subtotal += $item->total;
         }
