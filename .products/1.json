@@ -5,6 +5,8 @@
     "imageUrls": [],
     "prices": [ { "value": 12.99, "currency": "GBP" },
                 { "value": 17.50, "currency": "USD" } ],
+	"priceRules": [ { "greaterThanXUnits": 5, "value": 10.99, "currency" : "GBP" },
+					{ "greaterThanXUnits": 5, "value": 15.50, "currency" : "GBP" } ]
     "categoryIds": [ 1 ],
     "draft": false,
     "deletedAt": 0
