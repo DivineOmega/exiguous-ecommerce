@@ -32,7 +32,6 @@ class Order
         $orderData->subtotal = 0;
 
         foreach ($orderData->items as $item) {
-            
             $item->unitCost = $item->unitCost($orderData->currency);
 
             if ($item->unitCost === null) {

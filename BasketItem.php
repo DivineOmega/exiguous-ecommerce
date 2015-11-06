@@ -16,11 +16,11 @@ class BasketItem
     public function unitCost($currency)
     {
         $unitCost = null;
-        
+
         if (isset($item->product)) {
-            
+
             // TODO: Retrieve current unit cost based on $this->product->data->priceRules
-            
+
             foreach ($this->product->data->prices as $price) {
                 if ($price->currency == $currency) {
                     $unitCost = $price->value;
@@ -28,7 +28,7 @@ class BasketItem
                 }
             }
         }
-        
+
         return $unitCost;
     }
 
