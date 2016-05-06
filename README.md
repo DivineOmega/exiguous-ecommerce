@@ -83,6 +83,14 @@ $basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
 $basket->offsetProductQuantity($product, -5); // Remove five of those Teddy Bears
 ```
 
+Migrating the basket to an order:
+
+```php
+$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+
+$basket->convertToOrder();
+```
+
 Getting and using settings:
 
 ```php
