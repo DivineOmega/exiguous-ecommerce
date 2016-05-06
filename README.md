@@ -27,7 +27,7 @@ If your framework does not already do so, you must add `require_once "vendor/aut
 Getting products and categories:
 
 ```php
-$category = \DivineOmega\ExiguousEcommerce\Product::findBySlug("fluffy-things");
+$category = \DivineOmega\ExiguousEcommerce\Category::findBySlug("fluffy-things");
 $products = $category->products();
 
 foreach($products as $product) {
