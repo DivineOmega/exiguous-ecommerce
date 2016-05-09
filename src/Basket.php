@@ -106,7 +106,6 @@ class Basket
 
         foreach ($this->items as $item) {
             if ($item->product->id == $product->id) {
-
                 $item->quantity = $quantity;
                 $this->save();
 
