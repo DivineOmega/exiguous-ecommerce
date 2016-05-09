@@ -17,16 +17,32 @@ class BasketItem
     {
         $unitCost = null;
 
-        if (isset($item->product)) {
+        if (isset($this->product)) {
 
-            // TODO: Retrieve current unit cost based on $this->product->data->priceRules
-
-            foreach ($this->product->data->prices as $price) {
-                if ($price->currency == $currency) {
-                    $unitCost = $price->value;
-                    break;
-                }
+          // Check product price rules for a price.
+          if (isset($this->product->data->priceRules) && is_array($this->product->data->priceRules)) {
+            foreach($this->product->data->priceRules as $priceRule) {
+              if ($priceRule->currency != $currency) {
+                continue;
+              }
+              if ($this->quantity > $priceRule->greaterThanXUnits) {
+                $unitCost = $priceRule->value;
+              }
             }
+          }
+
+          // If we've not got a unit cost from checking the price rules, then
+          // just get the regular product price.
+          if (!$unitCost) {
+            foreach ($this->product->data->prices as $price) {
+              if ($price->currency != $currency) {
+                continue;
+              }
+              $unitCost = $price->value;
+              break;
+            }
+          }
+
         }
 
         return $unitCost;

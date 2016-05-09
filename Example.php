@@ -10,6 +10,6 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->setCurrency($coreSettings->data->primaryCurrency);
 
-$basket->addProduct($product, 2);
+$basket->addProduct($product, 10);
 
 $basket->convertToOrder();

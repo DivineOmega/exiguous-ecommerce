@@ -38,9 +38,9 @@ class Order
                 throw new \Exception('Unable to determine unit cost of product when creating order from basket. Check relevant products have prices in the currency defined for this order.');
             }
 
-            $item->lineTotal = lineTotal($orderData->currency);
+            $item->lineTotal = $item->lineTotal($orderData->currency);
 
-            $orderData->subtotal += $item->total;
+            $orderData->subtotal += $item->lineTotal;
         }
 
         $orderData->deliveryOption = $basket->deliveryOption;
