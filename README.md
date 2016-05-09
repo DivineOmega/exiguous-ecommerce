@@ -78,7 +78,7 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->addProduct($product); // Add one Teddy Bear
 
-$basket->setProductQuantity($product, 10); // Set the number of Teddy Bears in the basket to 10
+$basket->setProductQuantity($product, 10); // Set the number of Teddy Bears in the basket to ten
 
 $basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
 
