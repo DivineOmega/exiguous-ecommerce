@@ -59,7 +59,7 @@ var_dump($basket->items); // Outputs an array of, you guessed it, basket items! 
 
 ```
 
-Removing a product from a basket: 
+Removing a product from a basket:
 
 ```php
 $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
@@ -69,7 +69,7 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 $basket->removeProduct($product); // Removes all teddy bears from the basket
 ```
 
-Offsetting the quantity of a product in the basket:
+Setting/Offsetting the quantity of a product in the basket:
 
 ```php
 $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
@@ -77,6 +77,8 @@ $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->addProduct($product); // Add one Teddy Bear
+
+$basket->setProductQuantity($product, 10); // Set the number of Teddy Bears in the basket to 10
 
 $basket->offsetProductQuantity($product, 10); // Add ten more Teddy Bears
 
