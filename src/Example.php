@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $coreSettings = \DivineOmega\ExiguousEcommerce\Settings::find('core');
 

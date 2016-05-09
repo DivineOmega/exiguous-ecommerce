@@ -1,0 +1,55 @@
+{
+    "datePlaced": 1462790751,
+    "currency": "GBP",
+    "customer": null,
+    "billingAddress": null,
+    "deliveryAddress": null,
+    "items": [
+        {
+            "product": {
+                "id": 1,
+                "data": {
+                    "slug": "teddy-bear",
+                    "name": "Teddy Bear",
+                    "description": "A cute bear to snuggle and love! <3",
+                    "imageUrls": [
+
+                    ],
+                    "prices": [
+                        {
+                            "value": 12.99,
+                            "currency": "GBP"
+                        },
+                        {
+                            "value": 17.5,
+                            "currency": "USD"
+                        }
+                    ],
+                    "priceRules": [
+                        {
+                            "greaterThanXUnits": 5,
+                            "value": 10.99,
+                            "currency": "GBP"
+                        },
+                        {
+                            "greaterThanXUnits": 5,
+                            "value": 15.5,
+                            "currency": "USD"
+                        }
+                    ],
+                    "categoryIds": [
+                        1
+                    ],
+                    "draft": false,
+                    "deletedAt": 0
+                }
+            },
+            "quantity": 10,
+            "unitCost": 10.99,
+            "lineTotal": 109.9
+        }
+    ],
+    "subtotal": 109.9,
+    "deliveryOption": null,
+    "total": 109.9
+}
