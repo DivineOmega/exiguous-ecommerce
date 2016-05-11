@@ -42,4 +42,9 @@ class Product
 
         return $objs;
     }
+
+    public function save()
+    {
+        ExiguousEcommerceItem::save(self::$directory, $this);
+    }
 }

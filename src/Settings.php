@@ -29,4 +29,9 @@ class Settings
         $this->name = $name;
         $this->data = $data;
     }
+
+    public function save()
+    {
+        ExiguousEcommerceItem::save(self::$directory, $this);
+    }
 }
