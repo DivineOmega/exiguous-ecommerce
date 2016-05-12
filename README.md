@@ -33,7 +33,7 @@ If you are using Laravel, this can be done by setting an `EXIGUOUS_ECOMMERCE_DAT
 EXIGUOUS_ECOMMERCE_DATA_DIRECTORY=/var/www/ecommerce-site/path-to-data-directory/
 ```
 
-If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environent variable.
+If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environment variable.
 
 Please note that it is important the `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable is set with a trailing slash present.
 
