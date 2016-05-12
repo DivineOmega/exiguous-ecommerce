@@ -37,7 +37,7 @@ class Basket
     public function total($multiplier = 1)
     {
         if (!$this->currency) {
-            throw new \Exception('Unable to calculate the basket total as the basket\'s currency has now been set.');
+            throw new \Exception('Unable to calculate the basket total as the basket\'s currency has not been set.');
         }
 
         $total = 0;
