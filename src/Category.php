@@ -4,7 +4,7 @@ namespace DivineOmega\ExiguousEcommerce;
 
 class Category
 {
-    public static $directory = '.categories';
+    public static $directory = 'categories';
     public static $class = 'Category';
 
     public static function find($id)

@@ -4,7 +4,7 @@ namespace DivineOmega\ExiguousEcommerce;
 
 class Order
 {
-    public static $directory = '.orders';
+    public static $directory = 'orders';
     public static $class = 'Order';
 
     public static function find($id)

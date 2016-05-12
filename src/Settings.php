@@ -4,7 +4,7 @@ namespace DivineOmega\ExiguousEcommerce;
 
 class Settings
 {
-    public static $directory = '.settings';
+    public static $directory = 'settings';
 
     public static function find($name)
     {
