@@ -36,19 +36,19 @@ class Basket
 
     public function total($currency, $multiplier = 1)
     {
-      $total = 0;
+        $total = 0;
 
-      foreach ($this->items as $item) {
-        $total += $item->lineTotal($currency);
-      }
+        foreach ($this->items as $item) {
+            $total += $item->lineTotal($currency);
+        }
 
-      if ($this->deliveryOption && isset($this->deliveryOption->cost)) {
-        $total += $this->deliveryOption->cost;
-      }
+        if ($this->deliveryOption && isset($this->deliveryOption->cost)) {
+            $total += $this->deliveryOption->cost;
+        }
 
-      $total *= $multiplier;
+        $total *= $multiplier;
 
-      return $total;
+        return $total;
     }
 
     public function addProduct($product, $quantity = 1)
