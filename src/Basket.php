@@ -36,6 +36,10 @@ class Basket
 
     public function total($multiplier = 1)
     {
+        if (!$this->currency) {
+            throw new \Exception('Unable to calculate the basket total as the basket\'s currency has now been set.');
+        }
+
         $total = 0;
 
         foreach ($this->items as $item) {
