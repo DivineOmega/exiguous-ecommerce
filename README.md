@@ -22,17 +22,22 @@ Then just run `composer update` to download/install Exiguous Ecommerce and creat
 
 If your framework does not already do so, you must add `require_once "vendor/autoload.php"` to any files in which you wish to use Exiguous Ecommerce.
 
-As the data files that contain information regarding products, categories, and so on are stored within your `vendor` directory, you may need to specifically allow them in your version control system. For example, if using git, you could add the following to your `.gitignore` file.
+## Configuration
+
+Exiguous Ecommerce stores all of its data within a `data` directory. An example `data` directory is provided in this package.
+
+Before use, you should then copy the `data` directory to another location and then specify this location your project's environment.
+If you are using Laravel, this can be done be specifing a `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable in your `.env` file, as follows.
 
 ```
-# Ignore vendor folder...
-vendor
-
-# But include the Exiguous Ecommerce data directory
-!vendor/divineomega/exiguous-ecommerce/data
+EXIGUOUS_ECOMMERCE_DATA_DIRECTORY=/var/www/ecommerce-site/path-to-data-directory/
 ```
 
-(This may be modified in the future so that you can place the data directory in a location of your choosing.)
+If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environent variable.
+
+For security reasons, you should place the `data` directory in a location which is not web-accessible. In case the data directory is placed in
+a web accessible location by accident, a `.htaccess` file is provided that should deny web users access to the directory's content in most
+common web server configurations.
 
 ## Quick Start Examples
 

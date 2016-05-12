@@ -8,7 +8,7 @@ class Settings
 
     public static function find($name)
     {
-        $file = __DIR__.'/../data/'.self::$directory.'/'.$name.'.json';
+        $file = ExiguousEcommerceConfig::getDataDirectory().self::$directory.'/'.basename($name).'.json';
 
         if (!file_exists($file)) {
             throw new \Exception('File does not exist: '.$file);

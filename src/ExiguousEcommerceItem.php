@@ -8,7 +8,7 @@ class ExiguousEcommerceItem
     {
         $class = __NAMESPACE__.'\\'.$class;
 
-        $file = __DIR__.'/../data/'.$directory.'/'.$id.'.json';
+        $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
         if (!file_exists($file)) {
             throw new \Exception('File does not exist: '.$file);
@@ -32,7 +32,7 @@ class ExiguousEcommerceItem
     public static function findBySlug($directory, $class, $slug)
     {
         for ($id = 1; $id < PHP_INT_MAX; $id++) {
-            $file = __DIR__.'/../data/'.$directory.'/'.$id.'.json';
+            $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
             if (!file_exists($file)) {
                 break;
@@ -51,7 +51,7 @@ class ExiguousEcommerceItem
     public static function getUsusedId($directory)
     {
         for ($id = 1; $id < PHP_INT_MAX; $id++) {
-            $file = __DIR__.'/../data/'.$directory.'/'.$id.'.json';
+            $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
             if (!file_exists($file)) {
                 return $id;
@@ -63,7 +63,7 @@ class ExiguousEcommerceItem
 
     public static function save($directory, $object)
     {
-        $file = __DIR__.'/../data/'.$directory.'/'.$object->id.'.json';
+        $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$object->id.'.json';
 
         $data = json_encode($object->data, JSON_PRETTY_PRINT);
 

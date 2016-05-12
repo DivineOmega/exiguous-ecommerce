@@ -2,6 +2,10 @@
 
 require '../vendor/autoload.php';
 
+$dataDirectory = __DIR__.'/../data/';
+
+putenv('EXIGUOUS_ECOMMERCE_DATA_DIRECTORY='.$dataDirectory);
+
 $coreSettings = \DivineOmega\ExiguousEcommerce\Settings::find('core');
 
 $product = \DivineOmega\ExiguousEcommerce\Product::findBySlug('teddy-bear');
