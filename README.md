@@ -27,13 +27,15 @@ If your framework does not already do so, you must add `require_once "vendor/aut
 Exiguous Ecommerce stores all of its data within a `data` directory. An example `data` directory is provided in this package.
 
 Before use, you should then copy the `data` directory to another location and then specify this location your project's environment.
-If you are using Laravel, this can be done be specifing a `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable in your `.env` file, as follows.
+If you are using Laravel, this can be done by setting an `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable in your `.env` file, as follows.
 
 ```
 EXIGUOUS_ECOMMERCE_DATA_DIRECTORY=/var/www/ecommerce-site/path-to-data-directory/
 ```
 
 If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environent variable.
+
+Please note that it is important the `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable is set with a trailing slash present.
 
 For security reasons, you should place the `data` directory in a location which is not web-accessible. In case the data directory is placed in
 a web accessible location by accident, a `.htaccess` file is provided that should deny web users access to the directory's content in most
