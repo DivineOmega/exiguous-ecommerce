@@ -34,6 +34,7 @@ EXIGUOUS_ECOMMERCE_DATA_DIRECTORY=/var/www/ecommerce-site/path-to-data-directory
 ```
 
 If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environment variable.
+Alternatively, you could use [PHP dotenv](https://github.com/vlucas/phpdotenv) to add `.env` file support to your project.
 
 Please note that it is important the `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable is set with a trailing slash present.
 
