@@ -22,6 +22,18 @@ Then just run `composer update` to download/install Exiguous Ecommerce and creat
 
 If your framework does not already do so, you must add `require_once "vendor/autoload.php"` to any files in which you wish to use Exiguous Ecommerce.
 
+As the data files that contain information regarding products, categories, and so on are stored within your `vendor` directory, you may need to specifically allow them in your version control system. For example, if using git, you could add the following to your `.gitignore` file.
+
+```
+# Ignore vendor folder...
+vendor
+
+# But include the Exiguous Ecommerce data directory
+!vendor/divineomega/exiguous-ecommerce/data
+```
+
+(This may be modified in the future so that you can place the data directory in a location of your choosing.
+
 ## Quick Start Examples
 
 Getting products and categories:
