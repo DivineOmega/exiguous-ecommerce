@@ -34,12 +34,12 @@ class Basket
     {
     }
 
-    public function total($currency, $multiplier = 1)
+    public function total($multiplier = 1)
     {
         $total = 0;
 
         foreach ($this->items as $item) {
-            $total += $item->lineTotal($currency);
+            $total += $item->lineTotal($this->currency);
         }
 
         if ($this->deliveryOption && isset($this->deliveryOption->cost)) {
