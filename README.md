@@ -32,7 +32,7 @@ vendor
 !vendor/divineomega/exiguous-ecommerce/data
 ```
 
-(This may be modified in the future so that you can place the data directory in a location of your choosing.
+(This may be modified in the future so that you can place the data directory in a location of your choosing.)
 
 ## Quick Start Examples
 
