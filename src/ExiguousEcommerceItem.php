@@ -2,7 +2,7 @@
 
 namespace DivineOmega\ExiguousEcommerce;
 
-class ExiguousEcommerceItem
+abstract class ExiguousEcommerceItem
 {
     public static function find($directory, $class, $id)
     {

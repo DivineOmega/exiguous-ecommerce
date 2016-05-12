@@ -2,7 +2,7 @@
 
 namespace DivineOmega\ExiguousEcommerce;
 
-class ExiguousEcommerceConfig
+abstract class ExiguousEcommerceConfig
 {
     public static function getDataDirectory()
     {
