@@ -34,6 +34,23 @@ class Basket
     {
     }
 
+    public function total($currency, $multiplier = 1)
+    {
+      $total = 0;
+
+      foreach ($this->items as $item) {
+        $total += $item->lineTotal($currency);
+      }
+
+      if ($this->deliveryOption && isset($this->deliveryOption->cost)) {
+        $total += $this->deliveryOption->cost;
+      }
+
+      $total *= $multiplier;
+
+      return $total;
+    }
+
     public function addProduct($product, $quantity = 1)
     {
         if (!$product || !is_object($product) || !isset($product->id)) {
