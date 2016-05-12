@@ -22,5 +22,4 @@ class ExiguousEcommerceConfig
 
         return $dataDirectory;
     }
-
 }
