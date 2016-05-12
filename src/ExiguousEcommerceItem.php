@@ -18,7 +18,7 @@ abstract class ExiguousEcommerceItem
             throw new \Exception('Error exists in file ('.json_last_error_msg().'): '.$file);
         }
 
-        if (isset($data->deleted_at) && $data->deleted_at > 0) {
+        if (isset($data->deletedAt) && $data->deletedAt > 0) {
             return;
         }
 
