@@ -34,10 +34,10 @@ class Basket
     {
     }
 
-    public function total($multiplier = 1)
+    public function subtotal()
     {
         if (!$this->currency) {
-            throw new \Exception('Unable to calculate the basket total as the basket\'s currency has not been set.');
+            throw new \Exception('Unable to calculate the basket subtotal as the basket\'s currency has not been set.');
         }
 
         $total = 0;
@@ -45,6 +45,13 @@ class Basket
         foreach ($this->items as $item) {
             $total += $item->lineTotal($this->currency);
         }
+
+        return $total;
+    }
+
+    public function total($multiplier = 1)
+    {
+        $total = $this->subtotal();
 
         if ($this->deliveryOption && isset($this->deliveryOption->cost)) {
             $total += $this->deliveryOption->cost;
