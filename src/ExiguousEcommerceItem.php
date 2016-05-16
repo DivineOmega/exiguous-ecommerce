@@ -29,7 +29,7 @@ abstract class ExiguousEcommerceItem
         return new $class($id, $data);
     }
 
-    public static function all($directory, $class, $slug)
+    public static function all($directory, $class)
     {
         for ($id = 1; $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';

@@ -12,9 +12,9 @@ class Order
         return ExiguousEcommerceItem::find(self::$directory, self::$class, $id);
     }
 
-    public static function all($slug)
+    public static function all()
     {
-        return ExiguousEcommerceItem::all(self::$directory, self::$class, $slug);
+        return ExiguousEcommerceItem::all(self::$directory, self::$class);
     }
 
     public static function createFromBasket($basket)
