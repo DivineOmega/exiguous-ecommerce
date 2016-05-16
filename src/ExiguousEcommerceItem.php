@@ -31,6 +31,8 @@ abstract class ExiguousEcommerceItem
 
     public static function all($directory, $class)
     {
+        $objs = [];
+
         for ($id = 1; $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
@@ -41,11 +43,11 @@ abstract class ExiguousEcommerceItem
             $obj = self::find($directory, $class, $id);
 
             if ($obj) {
-                return $obj;
+                $objs[] = $obj;
             }
         }
 
-        throw new \Exception('No item found with specified slug.');
+        return $objs;
     }
 
     public static function findBySlug($directory, $class, $slug)
