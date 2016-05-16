@@ -12,6 +12,11 @@ class Category
         return ExiguousEcommerceItem::find(self::$directory, self::$class, $id);
     }
 
+    public static function all($slug)
+    {
+        return ExiguousEcommerceItem::all(self::$directory, self::$class, $slug);
+    }
+
     public static function findBySlug($slug)
     {
         return ExiguousEcommerceItem::findBySlug(self::$directory, self::$class, $slug);

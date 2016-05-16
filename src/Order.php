@@ -12,6 +12,11 @@ class Order
         return ExiguousEcommerceItem::find(self::$directory, self::$class, $id);
     }
 
+    public static function all($slug)
+    {
+        return ExiguousEcommerceItem::all(self::$directory, self::$class, $slug);
+    }
+
     public static function createFromBasket($basket)
     {
         $orderData = new \stdClass();
