@@ -8,7 +8,7 @@ abstract class ExiguousEcommerceItem
 
     public static function includeDrafts($includeDrafts)
     {
-      self::$includeDrafts = $includeDrafts;
+        self::$includeDrafts = $includeDrafts;
     }
 
     public static function find($directory, $class, $id)
@@ -30,9 +30,9 @@ abstract class ExiguousEcommerceItem
         }
 
         if (!self::$includeDrafts) {
-          if (isset($data->draft) && $data->draft == true) {
-              return;
-          }
+            if (isset($data->draft) && $data->draft == true) {
+                return;
+            }
         }
 
         return new $class($id, $data);
