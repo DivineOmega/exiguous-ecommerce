@@ -4,6 +4,13 @@ namespace DivineOmega\ExiguousEcommerce;
 
 abstract class ExiguousEcommerceItem
 {
+    private static $includeDrafts = false;
+
+    public static function includeDrafts($includeDrafts)
+    {
+      self::$includeDrafts = $includeDrafts;
+    }
+
     public static function find($directory, $class, $id)
     {
         $class = __NAMESPACE__.'\\'.$class;
@@ -22,8 +29,10 @@ abstract class ExiguousEcommerceItem
             return;
         }
 
-        if (isset($data->draft) && $data->draft == true) {
-            return;
+        if (!self::$includeDrafts) {
+          if (isset($data->draft) && $data->draft == true) {
+              return;
+          }
         }
 
         return new $class($id, $data);
