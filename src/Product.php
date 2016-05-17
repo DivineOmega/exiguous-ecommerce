@@ -25,8 +25,13 @@ class Product
     public $id = null;
     public $data = null;
 
-    public function __construct($id, $data)
+    public function __construct($id = null, $data = null)
     {
+        if ($id === null && $data === null) {
+          $id = ExiguousEcommerceItem::getUsusedId(self::$directory);
+          $data = new \stdClass();
+        }
+
         $this->id = $id;
         $this->data = $data;
     }
