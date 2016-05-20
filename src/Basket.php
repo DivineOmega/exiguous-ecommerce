@@ -152,7 +152,7 @@ class Basket
         $this->save();
     }
 
-    public function setBillingAddress($firstName, $lastName, $line1, $line2, $townCity, $postalCode, $country, $countryCode)
+    public function setBillingAddress($firstName, $lastName, $line1, $line2, $townCity, $countyState, $postalCode, $country, $countryCode)
     {
         $this->billingAddress = new \stdClass();
 
@@ -161,6 +161,7 @@ class Basket
         $this->billingAddress->line1 = $line1;
         $this->billingAddress->line2 = $line2;
         $this->billingAddress->townCity = $townCity;
+        $this->billingAddress->countyState = $countyState;
         $this->billingAddress->postalCode = $postalCode;
         $this->billingAddress->country = $country;
         $this->billingAddress->countryCode = $countryCode;
@@ -168,7 +169,7 @@ class Basket
         $this->save();
     }
 
-    public function setDeliveryAddress($firstName, $lastName, $line1, $line2, $townCity, $postalCode, $country, $countryCode)
+    public function setDeliveryAddress($firstName, $lastName, $line1, $line2, $townCity, $countyState, $postalCode, $country, $countryCode)
     {
         $this->deliveryAddress = new \stdClass();
 
@@ -177,6 +178,7 @@ class Basket
         $this->deliveryAddress->line1 = $line1;
         $this->deliveryAddress->line2 = $line2;
         $this->deliveryAddress->townCity = $townCity;
+        $this->deliveryAddress->countyState = $countyState;
         $this->deliveryAddress->postalCode = $postalCode;
         $this->deliveryAddress->country = $country;
         $this->deliveryAddress->countryCode = $countryCode;
