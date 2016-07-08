@@ -38,7 +38,14 @@ class BasketItem
                   if ($price->currency != $currency) {
                       continue;
                   }
-                  $unitCost = $price->value;
+
+                  // If a postive sale price exists, use that, else use the
+                  // regular product price.
+                  if (isset($price->saleValue) && $price->saleValue > 0) {
+                    $unitCost = $price->saleValue;
+                  } else {
+                    $unitCost = $price->value;
+                  }
                   break;
               }
           }
