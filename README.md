@@ -1,7 +1,5 @@
 # Exiguous Ecommerce
 
-[![StyleCI](https://styleci.io/repos/42943155/shield)](https://styleci.io/repos/42943155)
-
 Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and takes a very minimalistic approach.
 
 **Still in development!**
