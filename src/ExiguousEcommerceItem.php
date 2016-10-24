@@ -38,11 +38,27 @@ abstract class ExiguousEcommerceItem
         return new $class($id, $data);
     }
 
+    private static function getStartingID($directory) {
+
+        $coreSettings = Settings::find('core');
+
+        $startingID = 1;
+
+        if (isset($coreSettings->data->startingIDs)) {
+            if (isset($coreSettings->data->startingIDs->$directory) && is_numeric($coreSettings->data->startingIDs->$directory)) {
+                $startingID = $coreSettings->data->startingIDs->$directory;
+            }
+        }
+
+        return $startingID;
+
+    }
+
     public static function all($directory, $class)
     {
         $objs = [];
 
-        for ($id = 1; $id < PHP_INT_MAX; $id++) {
+        for ($id = self::getStartingID($directory); $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
             if (!file_exists($file)) {
@@ -61,7 +77,7 @@ abstract class ExiguousEcommerceItem
 
     public static function findBySlug($directory, $class, $slug)
     {
-        for ($id = 1; $id < PHP_INT_MAX; $id++) {
+        for ($id = self::getStartingID($directory); $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
             if (!file_exists($file)) {
@@ -80,7 +96,7 @@ abstract class ExiguousEcommerceItem
 
     public static function getUsusedId($directory)
     {
-        for ($id = 1; $id < PHP_INT_MAX; $id++) {
+        for ($id = self::getStartingID($directory); $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
             if (!file_exists($file)) {

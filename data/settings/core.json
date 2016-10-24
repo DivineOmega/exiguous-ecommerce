@@ -1,4 +1,7 @@
 {
     "name": "The Awesome Shop of Greatness",
-    "primaryCurrency": "GBP"
+    "primaryCurrency": "GBP",
+    "startingIDs": {
+        "orders": 1
+    }
 }
