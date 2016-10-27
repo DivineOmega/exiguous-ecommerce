@@ -2,8 +2,6 @@
 
 Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and takes a very minimalistic approach.
 
-**Still in development!**
-
 ## Installation
 
 First, change your `composer.json` file to include the `divineomega/exiguous-ecommerce` package as shown below.
@@ -11,7 +9,7 @@ First, change your `composer.json` file to include the `divineomega/exiguous-eco
 ```
 {
     "require": {
-        "divineomega/exiguous-ecommerce": "dev-master"
+        "divineomega/exiguous-ecommerce": "1.*"
     }
 }
 ```
