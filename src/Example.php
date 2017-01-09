@@ -14,6 +14,10 @@ $basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->setCurrency($coreSettings->data->primaryCurrency);
 
+$basket->setAdditionalDetails("07999916545","Andrew.McDonald@rapidweb.biz");
+
 $basket->addProduct($product, 10);
 
-$basket->convertToOrder();
+$order = $basket->convertToOrder();
+
+var_dump($order);

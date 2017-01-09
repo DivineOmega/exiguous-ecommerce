@@ -33,6 +33,8 @@ class Order
         $orderData->billingAddress = $basket->billingAddress;
         $orderData->deliveryAddress = $basket->deliveryAddress;
         $orderData->items = $basket->items;
+        $orderData->phoneNumber = $basket->additionalDetails->phoneNumber;
+        $orderData->emailAddress = $basket->additionalDetails->emailAddress;
 
         $orderData->subtotal = 0;
 
