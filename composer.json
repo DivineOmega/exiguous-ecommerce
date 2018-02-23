@@ -1,7 +1,7 @@
 {
     "name": "divineomega/exiguous-ecommerce",
     "description": "Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and takes a very minimalistic approach.",
-    "license": "LGPL3",
+    "license": "LGPL-3.0-only",
     "keywords": [
         "ecommerce",
         "ecommerce library",
