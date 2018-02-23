@@ -29,6 +29,7 @@ class Basket
     public $deliveryAddress = null;
     public $deliveryOption = null;
     public $currency = null;
+    public $additionalDetails = null;
 
     public function __construct()
     {
@@ -219,5 +220,18 @@ class Basket
         $_SESSION['ExiguousEcommerce']->Basket = null;
 
         return $order;
+    }
+
+    public function setAdditionalDetails($phoneNumber,$emailAddress)
+    {
+        $this->additionalDetails = new \stdClass();
+
+        $this->additionalDetails->phoneNumber = $phoneNumber;
+        $this->additionalDetails->emailAddress = $emailAddress;
+
+        $this->save();
+
+
+
     }
 }
