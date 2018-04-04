@@ -18,7 +18,7 @@ abstract class ExiguousEcommerceItem
         $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
 
         if (!file_exists($file)) {
-            throw new \Exception('The data file for the specififed ID does not exist: '.$file);
+            throw new \Exception('The data file for the specified ID does not exist: '.$file);
         }
 
         if (!$data = json_decode(file_get_contents($file))) {
